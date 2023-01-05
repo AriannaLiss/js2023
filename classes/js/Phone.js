@@ -31,7 +31,9 @@ const phone1 = new Phone('7223847', 'Samsung', 32);
 const phone2 = new Phone('7113847', 'Oppo', 22);
 const phone3 = new Phone('7223555', 'iPhone', 12);
 
-console.dir(phone1, phone2, phone3);
+console.dir(phone1);
+console.dir(phone2);
+console.dir(phone3);
 
 console.info('Phone 1 number is ' + phone1.getNumber());
 phone3.receiveCall('Lesha');
