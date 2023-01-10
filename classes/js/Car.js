@@ -10,53 +10,57 @@
 Створити похідний від Car клас - SportCar, який також характеризується граничною швидкістю.
 */
 
-function Driver(firstname, lastname, experience = 0){
-    this.firstname = firstname;
-    this.lastname = lastname;
-    this.experience = experience;
+class Driver{
+    constructor (firstname, lastname, experience = 0){
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.experience = experience;
+    }
 }
 
-function Engine(power, manufacturer){
-    this.power = power;
-    this.manufacturer = manufacturer;
+class Engine{
+    constructor(power, manufacturer){
+        this.power = power;
+        this.manufacturer = manufacturer;
+    }
 }
 
-function Car(autoBrand, autoClass, weight, driver, engine){
-    this.autoBrand = autoBrand;
-    this.autoClass = autoClass;
-    this.weight = weight;
-    this.driver = driver;
-    this.engine = engine;
-}
+class Car{
+    constructor(autoBrand, autoClass, weight, driver, engine){
+        this.autoBrand = autoBrand;
+        this.autoClass = autoClass;
+        this.weight = weight;
+        this.driver = driver;
+        this.engine = engine;
+    }
 
-
-Car.prototype.toString = function(){
-    // console.dir(this);
-    return `Auto: ${this.autoBrand}<br>
+    toString(){
+        return `Auto: ${this.autoBrand}<br>
             Class: ${this.autoClass}<br>
             Weight: ${this.weight}<br>
             Driver: ${this.driver.firstname} ${this.driver.lastname}, experience is ${this.driver.experience} years<br>
             Engine: ${this.engine.manufacturer}, power is ${this.engine.power}<br>`
-}
+    }
 
-Car.prototype.start = function(){
-    console.info("Go!");
-    return this;
-}
+    start(){
+        console.info("Go!");
+        return this;
+    }
 
-Car.prototype.stop = function(){
-    console.info("Stop.");
-    return this;
-}
+    stop(){
+        console.info("Stop.");
+        return this;
+    }
 
-Car.prototype.turnRight = function(){
-    console.info("Turn right...");
-    return this;
-}
+    turnRight(){
+        console.info("Turn right...");
+        return this;
+    }
 
-Car.prototype.turnLeft = function(){
-    console.info("Turn left...");
-    return this;
+    turnLeft(){
+        console.info("Turn left...");
+        return this;
+    }
 }
 
 const lida = new Driver('Lidia', 'Kalakutska', 2);
