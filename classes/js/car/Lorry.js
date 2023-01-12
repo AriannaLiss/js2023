@@ -1,6 +1,6 @@
-// Створити похідний від Car клас - Lorry (вантажівка), що характеризується також вантажопідйомністю кузова.
+import {Driver, Engine, Car} from './Car.js'
 
-class Lorry extends Car{
+export class Lorry extends Car{
     constructor(capacity, autoBrand, autoClass, weight, driver, engine){
         super(autoBrand, autoClass, weight, driver, engine);
         this.capacity = capacity;
@@ -9,10 +9,3 @@ class Lorry extends Car{
             return super.toString()+`Capacity: ${this.capacity}<br>`;
     }
 }
-
-const dima = new Driver('Dima', 'T', 22);
-const engine2 = new Engine(5000, 'Power');
-let lorry = new Lorry(3, 'Mersedes', 'C', 3, dima, engine2);
-
-lorry.start().turnLeft().start().stop();
-document.write('<br><br>' + lorry);

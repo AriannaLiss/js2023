@@ -10,22 +10,37 @@
 Створити похідний від Car клас - SportCar, який також характеризується граничною швидкістю.
 */
 
-class Driver{
+class Person{
+    constructor (firstname, lastname){
+        this.fullName = firstname + ' ' + lastname;
+    }
+    toString(){
+        return this.fullName;
+    } 
+}
+
+export class Driver extends Person{
     constructor (firstname, lastname, experience = 0){
-        this.firstname = firstname;
-        this.lastname = lastname;
+        super(firstname, lastname);
         this.experience = experience;
+    }
+    toString(){
+        return `Driver: ${super.toString()}, experience is ${this.experience} years<br>`;
     }
 }
 
-class Engine{
+export class Engine{
     constructor(power, manufacturer){
         this.power = power;
         this.manufacturer = manufacturer;
     }
+    toString(){
+        return `Engine: ${this.manufacturer}, power is ${this.power}<br>`
+
+    }
 }
 
-class Car{
+export class Car{
     constructor(autoBrand, autoClass, weight, driver, engine){
         this.autoBrand = autoBrand;
         this.autoClass = autoClass;
@@ -37,36 +52,26 @@ class Car{
     toString(){
         return `Auto: ${this.autoBrand}<br>
             Class: ${this.autoClass}<br>
-            Weight: ${this.weight}<br>
-            Driver: ${this.driver.firstname} ${this.driver.lastname}, experience is ${this.driver.experience} years<br>
-            Engine: ${this.engine.manufacturer}, power is ${this.engine.power}<br>`
+            Weight: ${this.weight}<br>` + this.driver + this.engine;
     }
 
     start(){
-        console.info("Go!");
+        console.info(this.autoBrand + " is going!");
         return this;
     }
 
     stop(){
-        console.info("Stop.");
+        console.info(this.autoBrand + " has stopped.");
         return this;
     }
 
     turnRight(){
-        console.info("Turn right...");
+        console.info(this.autoBrand + " is turning right...");
         return this;
     }
 
     turnLeft(){
-        console.info("Turn left...");
+        console.info(this.autoBrand + " is turning left...");
         return this;
     }
 }
-
-const lida = new Driver('Lidia', 'Kalakutska', 2);
-const engine = new Engine(2000, 'EngineInc');
-const car = new Car('Subaru', 'A', 1500, lida, engine)
-
-car.start().turnRight().start().turnLeft().turnLeft().start().stop();
-
-document.write('<br><br>' + car);
