@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang='uk'>
+<head>
+  <meta charset='UTF-8'>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="shortcut icon" href="./img/calc.webp" type="image/x-icon">
+  <title>Calculator</title>
+  <script src="./js/index.js"></script>
+</head>
+<body>
+  <div class="box">
+    <div class="display">
+      <input id="scoreboard" type="text" readonly size="18">
+      <p id="mem" class="hinted">m</p>
+    </div>
+    <div class="keys" id="keyboard" >
+      <p>
+        <input type="button" class="button gray" value="mrc">
+        <input type="button" class="button gray" value="m-">
+        <input type="button" class="button gray" value="m+">
+        <input type="button" class="button pink" value="/">
+      </p>
+      <p>
+        <input type="button" class="button black" value="7">
+        <input type="button" class="button black" value="8">
+        <input type="button" class="button black" value="9">
+        <input type="button" class="button pink" value="*">
+      </p>
+      <p>
+        <input type="button" class="button black" value="4">
+        <input type="button" class="button black" value="5">
+        <input type="button" class="button black" value="6">
+        <input type="button" class="button pink" value="-">
+      </p>
+      <p>
+        <input type="button" class="button black" value="1">
+        <input type="button" class="button black" value="2">
+        <input type="button" class="button black" value="3">
+        <input type="button" class="button pink" value="+">
+      </p>
+      <p>
+        <input type="button" class="button black" value="0">
+        <input type="button" class="button black" value=".">
+        <input type="button" class="button black" value="C">
+        <input id="equal" type="button" class="button orange" value="=" disabled >
+      </p>
+    </div>
+  </div>
+  <script src="./src/index.js"></script>
+</body>
+</html>
