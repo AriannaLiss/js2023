@@ -1,0 +1,49 @@
+#test{
+    background-color: grey;
+    width: 20rem;
+    min-height: 2rem;
+    padding: 1rem;
+}
+
+input{
+    display: block;
+    margin: 1rem;
+}
+
+#price{
+    outline:none;
+}
+
+#priceView{
+    margin: 1rem 1rem -.3rem;
+}
+
+#wrongPrice{
+    margin: 1rem;
+    color: red;
+}
+
+#deletePrice{
+    display: inline-block; 
+    border: 1px solid black;
+    padding: 0.3rem;
+    margin-left: .6rem;
+    cursor: pointer;
+    background-color: grey;
+}
+
+.green-text{
+    color: green;
+}
+
+.green-border{
+    border-color: green;
+}
+
+.red-border{
+    border-color: red;
+}
+
+.hide{
+    display:none;
+}
